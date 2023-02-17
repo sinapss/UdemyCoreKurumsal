@@ -2,6 +2,7 @@ using Abc.Northwind.Business.Abstract;
 using Abc.Northwind.Business.Concrete;
 using Abc.Northwind.DataAccess.Abstract;
 using Abc.Northwind.DataAccess.Concrete.EntityFramework;
+using Abc.Northwind.Mvc.WebUI.Middlewares;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -27,5 +28,8 @@ app.MapControllerRoute(
 //app.UseHttpsRedirection();
 //app.UseStaticFiles();
 //app.UseRouting();
+
+app.UseStaticFiles();
+app.UseNodeModules(builder.Environment.ContentRootPath);
 
 app.Run();
