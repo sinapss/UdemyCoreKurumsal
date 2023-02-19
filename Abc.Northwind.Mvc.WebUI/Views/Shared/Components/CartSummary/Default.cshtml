@@ -1,0 +1,19 @@
+﻿@model Abc.Northwind.Mvc.WebUI.Models.CartSummaryViewModel
+
+<ul class="dropdown-menu dropdown-menu-lg-end">
+    @foreach (var item in Model.Cart.Cartlines)
+    {
+        <li>
+            <a class="dropdown-item" href="#">@item.Product.ProductName <span class="badge text-bg-secondary">@item.Quantity</span></a>
+        </li>
+    }
+    
+    <li>
+        <a><span class="glyphicon glyphicon-align-left glyphicon-shopping-cart" aria-hidden="true"></span></a>
+        <h6 class="text-center"><i class="bi bi-cart-fill"></i> @Model.Cart.Total</span></h6>
+    </li>
+    <li role="separator" class="divider"></li>
+    <li>
+        <a class="dropdown-item" asp-controller="Cart" asp-action="List">Go To Cart Details <i class="bi bi-search"></i></a>
+    </li>
+</ul>

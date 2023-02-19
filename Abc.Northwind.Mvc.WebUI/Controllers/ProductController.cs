@@ -1,4 +1,5 @@
 ﻿using Abc.Northwind.Business.Abstract;
+using Abc.Northwind.Mvc.WebUI.ExtensionMethod;
 using Abc.Northwind.Mvc.WebUI.Models;
 using Microsoft.AspNetCore.Mvc;
 
@@ -25,5 +26,6 @@ namespace Abc.Northwind.Mvc.WebUI.Controllers
             };
             return View(model);
         }
+        
     }
 }

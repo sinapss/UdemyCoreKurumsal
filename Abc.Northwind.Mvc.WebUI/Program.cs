@@ -3,6 +3,7 @@ using Abc.Northwind.Business.Concrete;
 using Abc.Northwind.DataAccess.Abstract;
 using Abc.Northwind.DataAccess.Concrete.EntityFramework;
 using Abc.Northwind.Mvc.WebUI.Middlewares;
+using Abc.Northwind.Mvc.WebUI.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -14,6 +15,13 @@ builder.Services.AddScoped<IProductService, ProductManager>();
 builder.Services.AddScoped<IProductDal, EfProductDal>();
 builder.Services.AddScoped<ICategoryService, CategoryManager>();
 builder.Services.AddScoped<ICategoryDal,EfCategoryDal>();
+builder.Services.AddSingleton<ICartSessionService,CartSessionService>();
+builder.Services.AddSingleton<ICartService,CartService>();
+builder.Services.AddSingleton<IHttpContextAccessor,HttpContextAccessor>();
+
+builder.Services.AddSession();
+//session aktifleþtirmek için
+builder.Services.AddDistributedMemoryCache();
 
 var app = builder.Build();
 
@@ -33,5 +41,6 @@ app.MapControllerRoute(
 
 app.UseStaticFiles();
 app.UseNodeModules(builder.Environment.ContentRootPath);
+app.UseSession();
 
 app.Run();

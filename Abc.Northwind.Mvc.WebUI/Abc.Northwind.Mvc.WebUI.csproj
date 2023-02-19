@@ -7,6 +7,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.2" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\Abc.Core\Abc.Core.csproj" />
     <ProjectReference Include="..\Abc.Northwind.Business\Abc.Northwind.Business.csproj" />
     <ProjectReference Include="..\Abc.Northwind.Entities\Abc.Northwind.Entities.csproj" />
