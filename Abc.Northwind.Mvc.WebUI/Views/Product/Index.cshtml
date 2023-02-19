@@ -1,6 +1,6 @@
 ﻿@model Abc.Northwind.Mvc.WebUI.Models.ProductListViewModel
 @{
-    Layout = "~/Views/_Layout.cshtml";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 <div>
     <table class="table table-responsive">
@@ -19,3 +19,10 @@
         }
     </table>
 </div>
+<product-list-pager 
+    current-category="@Model.CurrentCategory"
+    current-page="@Model.CurrentPage"
+    page-count="@Model.PageCount"
+    page-size="@Model.PageSize">
+
+</product-list-pager>

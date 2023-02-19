@@ -38,18 +38,20 @@
                 </div>
             </div>
         </nav>
-        <div class="container">
-            <nav class="navbar">
-                <a class="navbar-brand" href="#">Categories</a>
-            </nav>
-        </div>
     </div>
-    <div>
-        @RenderBody()
+    <div class="container mt-3">
+        <div class="row">
+            <div class="col-md-2">
+                @await Component.InvokeAsync("CategoryList")
+            </div>
+            <div class="col-md-10">
+                @RenderBody()
+            </div>
+        </div>
     </div>
     <div class="container">
         <div class="col-md-12">
-
+            Footer
         </div>
     </div>
     <script src="/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>

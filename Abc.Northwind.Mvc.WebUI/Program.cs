@@ -12,6 +12,8 @@ builder.Services.AddControllersWithViews();
 
 builder.Services.AddScoped<IProductService, ProductManager>();
 builder.Services.AddScoped<IProductDal, EfProductDal>();
+builder.Services.AddScoped<ICategoryService, CategoryManager>();
+builder.Services.AddScoped<ICategoryDal,EfCategoryDal>();
 
 var app = builder.Build();
 
