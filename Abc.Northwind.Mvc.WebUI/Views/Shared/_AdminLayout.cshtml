@@ -24,15 +24,15 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="#">ProductsStore</a>
+                            <a class="nav-link active" aria-current="page" asp-controller="Product" asp-action="Index">ProductsStore</a>
                         </li>
                     </ul>
                 </div>
                 <div class="dropdown text-right">
                     <a class="btn btn-secondary dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        Kullanıcı
+                        User
                     </a>
-                    @*@await Component.InvokeAsync("CartSummary")*@
+                    @await Component.InvokeAsync("UserSummary")
                 </div>
             </div>
         </nav>

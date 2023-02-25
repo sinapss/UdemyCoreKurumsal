@@ -7,7 +7,7 @@ using Microsoft.CodeAnalysis;
 
 namespace Abc.Northwind.Mvc.WebUI.Controllers
 {
-    [Authorize]
+    [Authorize(Roles ="Admin")]
     public class AdminController : Controller
     {
         private IProductService _productService;

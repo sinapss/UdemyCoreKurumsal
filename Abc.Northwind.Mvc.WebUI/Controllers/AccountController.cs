@@ -2,6 +2,7 @@
 using Abc.Northwind.Mvc.WebUI.Models;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.ModelBinding;
 
 namespace Abc.Northwind.Mvc.WebUI.Controllers
 {
@@ -55,6 +56,7 @@ namespace Abc.Northwind.Mvc.WebUI.Controllers
                     return RedirectToAction("Login", "Account");
                 }
             }
+            var error=ModelState.Select(x=>x.Value.Errors).Where(y=>y.Count() > 0).ToList();
             return View(registerViewModel);
         }
 
@@ -79,8 +81,8 @@ namespace Abc.Northwind.Mvc.WebUI.Controllers
             return View(loginViewModel);
         }
 
-        [HttpPost]
-        [ValidateAntiForgeryToken]
+        //[HttpPost]
+        //[ValidateAntiForgeryToken]
         public ActionResult LogOff()
         {
             _signUInManager.SignOutAsync().Wait();
